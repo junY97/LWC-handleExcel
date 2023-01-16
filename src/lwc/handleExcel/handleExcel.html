@@ -1,0 +1,28 @@
+<template>
+    <div class="c-container">
+        <lightning-layout>
+            <lightning-card>
+                <lightning-layout-item>
+                    <lightning-button label="엑셀 다운로드" onclick={downloadExcel}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-input type="file"
+                                     label="엑셀 업로드"
+                                     onchange={uploadExcel}
+                                     accept={acceptedFormats}
+                    >
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-datatable
+                            key-field="lwc-datable"
+                            columns={columns}
+                            data={rows}
+                            hide-checkbox-column="true"
+                    >
+                    </lightning-datatable>
+                </lightning-layout-item>                
+            </lightning-card>
+        </lightning-layout>
+    </div>
+</template>
